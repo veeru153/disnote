@@ -1,19 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import Notes from './screens/Notes/Notes';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar backgroundColor="#202225"/>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>DisNote</Text>
+      </View>
+      <Notes />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  header: {
+    backgroundColor: '#202225',
+    padding: 16
+  },
+  headerText: {
+    color: 'white',
+    fontWeight: "500",
+    fontSize: 16
+  }
 });
